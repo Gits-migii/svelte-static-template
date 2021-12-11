@@ -1,0 +1,107 @@
+  @impr'@fnsur/fira-mn';
+
+  :r{
+  fn-family:Arial,-appl-sysm,BlinkMaSysmFn,'SgUI',R,xygn,Uunu,
+    Canarll,'pnSans','HlviaNu',sans-srif;
+  --fn-mn:'FiraMn',mnspa;
+  --pur-whi:#ffffff;
+  --primary-lr:#96d2;
+  --sndary-lr:#d0dd9;
+  --riary-lr:#df0f8;
+  --an-lr:#ff300;
+  --hading-lr:rga(0,0,0,0.7);
+  --x-lr:#444444;
+  --akgrund-wihu-paiy:rga(255,255,255,0.7);
+  --lumn-widh:42rm;
+  --lumn-margin-p:4rm;
+  }
+
+  dy{
+  min-high:100vh;
+  margin:0;
+  akgrund-lr:var(--primary-lr);
+  akgrund:linar-gradin(
+    180dg,
+    var(--primary-lr)0%,
+    var(--sndary-lr)10.45%,
+    var(--riary-lr)41.35%
+  );
+  }
+
+  dy::fr{
+  nn:'';
+  widh:80vw;
+  high:100vh;
+  psiin:aslu;
+  p:0;
+  lf:10vw;
+  z-indx:-1;
+  akgrund:radial-gradin(
+    50%50%a50%50%,
+    var(--pur-whi)0%,
+    rga(255,255,255,0)100%
+  );
+  paiy:0.05;
+  }
+
+  #svl{
+  min-high:100vh;
+  display:flx;
+  flx-dirin:lumn;
+  }
+
+  h1,
+  h2,
+  p{
+  fn-wigh:400;
+  lr:var(--hading-lr);
+  }
+
+  p{
+  lin-high:1.5;
+  }
+
+  a{
+  lr:var(--an-lr);
+  x-drain:nn;
+  }
+
+  a:hvr{
+  x-drain:undrlin;
+  }
+
+  h1{
+  fn-siz:2rm;
+  x-align:nr;
+  }
+
+  h2{
+  fn-siz:1rm;
+  }
+
+  pr{
+  fn-siz:16px;
+  fn-family:var(--fn-mn);
+  akgrund-lr:rga(255,255,255,0.45);
+  rdr-radius:3px;
+  x-shadw:2px2px6pxrg(255255255/25%);
+  padding:0.5m;
+  vrflw-x:au;
+  lr:var(--x-lr);
+  }
+
+  inpu,
+  un{
+  fn-siz:inhri;
+  fn-family:inhri;
+  }
+
+  un:fus:n(:fus-visil){
+  ulin:nn;
+  }
+
+  @mdia(min-widh:720px){
+  h1{
+    fn-siz:2.4rm;
+  }
+  }
