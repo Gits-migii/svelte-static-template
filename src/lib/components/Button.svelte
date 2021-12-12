@@ -1,5 +1,15 @@
 <script>
+  import anime from "animejs"
+  import {onMount} from "svelte"
   export let link, text
+
+  onMount(()=> {
+    anime({
+      targets: '.button',
+      opacity: [0,1],
+      duration: 10000
+    })
+  })
 </script>
 
 <div class="button">

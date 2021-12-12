@@ -1,5 +1,6 @@
 <script context="module">
   import { browser, dev } from '$app/env';
+  import Button from "$lib/components/Button.svelte"
 
   // we don't need any JS on this page, though we'll load
   // it in dev so that we get hot module replacement...
@@ -20,6 +21,7 @@
 
 <div class="content">
   <h1>About this app</h1>
+  <Button link={"about"} text={"Foooo"} />
 
   <p>
     This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
