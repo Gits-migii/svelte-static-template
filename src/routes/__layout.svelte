@@ -10,7 +10,7 @@
 </main>
 
 <footer>
-  <address>© 2021- Migii</address>
+  <address>© 2021- KINTO Front-end</address>
 </footer>
 
 <style>

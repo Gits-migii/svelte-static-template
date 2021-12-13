@@ -984,6 +984,11 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+modern-css-reset@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/modern-css-reset/-/modern-css-reset-1.4.0.tgz#5bee4d11eeca2ff19b882c6e8f1769773e792d04"
+  integrity sha512-0crZmSFmrxkI7159rvQWjpDhy0u4+Awg/iOycJdlVn0RSeft/a+6BrQHR3IqvmdK25sqt0o6Z5Ap7cWgUee2rw==
+
 mri@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mri/-/mri-1.2.0.tgz#6721480fec2a11a4889861115a48b6cbe7cc8f0b"
@@ -1088,6 +1093,15 @@ postcss@^8.3.8:
   version "8.4.4"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.4.tgz#d53d4ec6a75fd62557a66bb41978bf47ff0c2869"
   integrity sha512-joU6fBsN6EIer28Lj6GDFoC/5yOZzLCfn0zHAn/MYXI7aPt4m4hK5KC5ovEZXy+lnCjmYIbQWngvju2ddyEr8Q==
+  dependencies:
+    nanoid "^3.1.30"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.1"
+
+postcss@^8.4.5:
+  version "8.4.5"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.5.tgz#bae665764dfd4c6fcc24dc0fdf7e7aa00cc77f95"
+  integrity sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==
   dependencies:
     nanoid "^3.1.30"
     picocolors "^1.0.0"

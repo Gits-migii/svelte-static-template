@@ -13,7 +13,16 @@
 </script>
 
 <div class="button">
-  <a href="/{link}">
+  <a href="/{link}" class="link:normal">
     <a sveltekit:prefetch href="/{link}">{text}</a>
   </a>
 </div>
+
+<style lang='scss'>
+  .button {
+    display: flex;
+    .link\:normal {
+      border: 1px solid #000;
+    }
+  }
+</style>

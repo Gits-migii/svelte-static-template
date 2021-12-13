@@ -1,12 +1,11 @@
 {
-  "name": "svelte-kit-template-public",
+  "name": "svelte-kit-template",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "adapt": "svelte-kit adapt",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
@@ -30,6 +29,8 @@
     "@lukeed/uuid": "^2.0.0",
     "animejs": "^3.2.1",
     "cookie": "^0.4.1",
+    "modern-css-reset": "^1.4.0",
+    "postcss": "^8.4.5",
     "sass": "^1.44.0",
     "swiper": "^7.3.1"
   }
