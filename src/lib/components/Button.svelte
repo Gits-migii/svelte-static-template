@@ -13,16 +13,35 @@
 </script>
 
 <div class="button">
-  <a href="/{link}" class="link:normal">
-    <a sveltekit:prefetch href="/{link}">{text}</a>
-  </a>
+    <a
+      class="link:normal"
+      sveltekit:prefetch
+      href="/{link}">
+      {text}
+    </a>
 </div>
 
 <style lang='scss'>
   .button {
     display: flex;
     .link\:normal {
-      border: 1px solid #000;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(0,0,0,.2);
+      text-decoration: none;
+      color: #ff3e00;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin-left: 4px;
+        border-top: 2px solid #ff3e00;
+        border-right: 2px solid #ff3e00;
+        transform: rotate(45deg);
+      }
     }
   }
 </style>

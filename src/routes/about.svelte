@@ -1,18 +1,22 @@
 <script context="module">
   import { browser, dev } from '$app/env';
-  import Button from "$lib/components/Button.svelte"
-
-  // we don't need any JS on this page, though we'll load
-  // it in dev so that we get hot module replacement...
   export const hydrate = dev;
-
-  // ...but if the client-side router is already loaded
-  // (i.e. we came here from elsewhere in the app), use it
   export const router = browser;
-
-  // since there's no dynamic data here, we can prerender
-  // it so that it gets served as a static asset in prod
   export const prerender = true;
+  
+</script>
+
+<script>
+  const fetchCats = async function() {
+    const items = await fetch('https://api.thecatapi.com/v1/images/search?limit=10');
+    return await items.json();
+  }
+
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+  // Import Swiper styles
+  import 'swiper/css';
+  import 'swiper/css/autoplay'
 </script>
 
 <svelte:head>
@@ -20,27 +24,22 @@
 </svelte:head>
 
 <div class="content">
-  <h1>About this app</h1>
-  <Button link={"about"} text={"Foooo"} />
+  <h1>this Page is 😺 and each and Swiper and await</h1>
 
-  <p>
-    This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-    following into your command line and following the prompts:
-  </p>
+  {#await fetchCats()}
+    <p>onLoad</p>
+    {:then cats}
+    <Swiper
+      spaceBetween={50}
+      Autoplay
+      slidesPerView={1}
+    >
+      {#each cats as cat}
+        <SwiperSlide><img src="{cat.url}" alt=""></SwiperSlide>
+      {/each}
+    </Swiper>  
+  {/await}
 
-  <!-- TODO lose the @next! -->
-  <pre>npm init svelte@next</pre>
-
-  <p>
-    The page you're looking at is purely static HTML, with no client-side interactivity needed.
-    Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-    the devtools network panel and reloading.
-  </p>
-
-  <p>
-    The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-    it with JavaScript disabled!
-  </p>
 </div>
 
 <style lang="scss">
@@ -50,6 +49,10 @@
     margin: var(--column-margin-top) auto 0 auto;
     span {
       font-size: 12px;
+    }
+
+    img {
+      width: 100%;
     }
   }
 </style>
