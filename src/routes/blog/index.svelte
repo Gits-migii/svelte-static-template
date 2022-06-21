@@ -9,8 +9,9 @@
 
     try {
       // here you should type your dev.to username
-      articles = await fetch(`https://dev.to/api/articles?tag=svelte`);
+      articles = await fetch(`https://dev.to/api/articles?tag=svelte&per_page=5&page=1`);
       articles = await articles.json();
+      console.log(articles)
     } catch (e) {
       console.log(e);
     }
@@ -53,4 +54,5 @@
       <div>No Articles</div>
     {/if}
   </div>
+    {articles.length}
 </div>
