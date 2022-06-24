@@ -5,18 +5,17 @@
 
   export const prerender = true;
   export async function load({ fetch, page }) {
-      let article;
 
       try {
       // here we are gonna fetch the single article by id
           article = await fetch(`https://dev.to/api/articles/${page.params.slug}`);
-          article = await article.json();
+          const body = await article.json();          
       } catch (e) {
           console.log(e);
       }
       return {
           props: {
-              article
+            body
           }
       };
   }
