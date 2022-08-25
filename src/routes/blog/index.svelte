@@ -1,27 +1,18 @@
 <script context="module">
-  import { browser, dev } from '$app/env';
-  import Button from '$lib/components/Button.svelte';
-  export const hydrate = dev;
-  export const router = browser;
   export const prerender = true;
-  export async function load({ fetch }) {
-    let articles;
 
-    try {
-      // here you should type your dev.to username
-      articles = await fetch(`https://dev.to/api/articles?tag=svelte&per_page=5&page=1`);
-      articles = await articles.json();
-      console.log(articles)
-    } catch (e) {
-      console.log(e);
-    }
-    // you can pass the `articles` via props like that
+  export async function load({ params, fetch, session, stuff }) {
+    const url = 'https://dev.to/api/articles?tag=svelte&per_page=5&page=1';
+    const response = await fetch(url);
+
     return {
+      status: response.status,
       props: {
-        articles
+        article: response.ok && (await response.json())
       }
     };
   }
+
 </script>
 
 <script>
