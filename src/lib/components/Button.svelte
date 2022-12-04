@@ -16,7 +16,7 @@
     <a
       class="link:normal"
       sveltekit:prefetch
-      href="/{link}">
+      href="{link}">
       {text}
     </a>
 </div>
